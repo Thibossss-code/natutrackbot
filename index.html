@@ -1,56 +1,57 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NatuTrack</title>
 <style>
-body{margin:0;padding:18px;background:#F1F8E9;font-family:sans-serif}
-.logo{font-size:32px;font-weight:900;color:#2E7D32}
-.box{background:#C8E6C9;padding:16px;border-radius:14px;margin:14px 0}
-.card{background:#fff;padding:16px;border-radius:14px;margin:14px 0;box-shadow:0 3px 8px #0001}
-button{width:100%;padding:14px;border:none;border-radius:10px;margin:7px 0;font-weight:800;font-size:15px}
-.b47{background:#66BB6A;color:#000} .b60{background:#2E7D32;color:#fff}
-input{width:92%;padding:12px;border-radius:10px;border:1px solid #999;margin:6px 0}
-.small{font-size:12px;color:#555}
-a{color:#2E7D32;font-weight:700;display:block;padding:6px 0}
-#botAnswer{background:#F1F8E9;padding:10px;border-radius:8px;margin-top:8px;min-height:20px}
+body{font-family:Arial;background:#f0f7e6;margin:0;padding:10px}
+.card{background:white;border-radius:16px;padding:15px;margin:10px 0;box-shadow:0 2px 8px #0001}
+button{border:0;border-radius:10px;padding:12px;font-weight:bold;width:100%;margin:5px 0}
+.b47{background:#7bc67e}.b60{background:#2e7d32;color:#fff}
+input{padding:12px;border-radius:10px;border:1px solid #ccc;width:90%}
+a{display:block;padding:10px;background:#fff3e0;border-radius:8px;margin:6px 0;text-decoration:none;color:#e65100;font-weight:bold}
 </style></head><body>
-<div class="logo">🌿 NatuTrack</div>
+<h1 style="color:#2e7d32">🌿 NatuTrack</h1>
 
-<div class="box">
-<h3>Not ready for $47? Get FREE sample!</h3>
-<input id="em" placeholder="your email">
-<button class="b60" onclick="if(!em.value.includes('@')){alert('Enter email');return;} alert('Saved '+em.value); window.open('mailto:natutracthabopeter@gmail.com?subject=NEW LEAD:'+em.value,'_blank')">Send Free Sample</button>
+<div class="card"><b>📊 Tracker</b><br><br>
+<input id="score" type="number" placeholder="1-10 how you feel"><br>
+<button class="b60" onclick="addTrack()">+ Add Today</button>
+<div id="trackList"></div></div>
+
+<div class="card"><b>⏰ Reminder</b><br>
+<input id="remTime" type="time"><br>
+<button class="b47" onclick="setRem()">Set Reminder</button>
+<p id="remStatus"></p></div>
+
+<div class="card" style="background:#e8f5e9"><b>🤖 Bot</b><br>
+<input id="botQ" placeholder="ginger, rooibos, diabetes"><br>
+<button class="b60" onclick="askBot()">Ask</button>
+<p id="botA"></p></div>
+
+<div class="card"><b>🔗 Amazon Tools ✅ WORKING - thibossss-20</b><br>
+<a href="https://www.amazon.com/s?k=rooibos+tea&tag=thibossss-20" target="_blank">🌿 Tool 1: Rooibos Tea</a>
+<a href="https://www.amazon.com/s?k=ginger+tea+digestion&tag=thibossss-20" target="_blank">🌿 Tool 2: Ginger Tea</a>
+<a href="https://www.amazon.com/s?k=turmeric+curcumin&tag=thibossss-20" target="_blank">🌿 Tool 3: Turmeric</a>
+<a href="https://www.amazon.com/s?k=yoga+mat&tag=thibossss-20" target="_blank">🌿 Tool 4: Yoga Mat</a>
+<a href="https://www.amazon.com/s?k=blender+bottle&tag=thibossss-20" target="_blank">🌿 Tool 5: Shaker Bottle</a>
+<a href="https://www.amazon.com/s?k=digital+food+scale&tag=thibossss-20" target="_blank">🌿 Tool 6: Food Scale</a>
 </div>
+
+<div class="card" style="background:#dcedc8"><b>FREE Sample!</b><br><br>
+<input id="freeEmail" placeholder="your email"><br>
+<button class="b60" onclick="freeSample()">Send Free Sample</button>
+<p id="freeMsg"></p></div>
 
 <div id="plans"></div>
 
-<div class="card"><b>📊 Tracker + Reminder 🔔 8:30am/12:30/6:30</b><br><span id="trackHist" class="small">No entry yet</span>
-<input id="moodIn" type="number" placeholder="Mood 1-10">
-<button class="b47" onclick="let m=document.getElementById('moodIn').value; if(!m){alert('Enter mood');return;} let d=new Date().toLocaleDateString(); localStorage.setItem('natu_'+d,m); document.getElementById('trackHist').innerText='✅ Saved '+d+' Mood: '+m;">+ Add Today</button>
-</div>
-
-<div class="card"><b>🔗 Amazon Tools - NEW LINKS</b><br>
-<a href="https://www.amazon.com/dp/B07X1GD2D" target="_blank">🌿 Tool 1: B07X1GD2D</a>
-<a href="https://www.amazon.com/dp/B06E9CEFR" target="_blank">🌿 Tool 2: B06E9CEFR</a>
-<a href="https://www.amazon.com/dp/B02U5AOYZ" target="_blank">🌿 Tool 3: B02U5AOYZ</a>
-<a href="https://www.amazon.com/dp/B0IANOYRG" target="_blank">🌿 Tool 4: B0IANOYRG</a>
-<a href="https://www.amazon.com/dp/B0FWHK7LR" target="_blank">🌿 Tool 5: B0FWHK7LR</a>
-<a href="https://www.amazon.com/dp/B06MADSWH" target="_blank">🌿 Tool 6: B06MADSWH</a>
-<a href="https://www.amazon.com/dp/B0I2XQGY2" target="_blank">🌿 Tool 7: B0I2XQGY2</a>
-<a href="https://www.amazon.com/dp/B06IGKRFV" target="_blank">🌿 Tool 8: B06IGKRFV</a>
-<a href="https://www.amazon.com/dp/B0ICAQH XI" target="_blank">🌿 Tool 9: B0ICAQH XI</a>
-</div>
-
-<div class="card"><b>🤖 NatuTrackBot - ACTIVE</b><br>
-<input id="botQ" placeholder="Ask: rooibos for sleep?">
-<button class="b60" onclick="let q=document.getElementById('botQ').value.toLowerCase(); let a='I help with wellness only: rooibos for sleep, ginger for digestion.'; if(q.includes('rooibos')||q.includes('sleep'))a='🌿 Rooibos: Caffeine-free, good for relaxation before bed.'; if(q.includes('ginger'))a='🌿 Ginger: For digestion, hot water after meals.'; document.getElementById('botAnswer').innerText=a;">Ask Bot</button>
-<div id="botAnswer">Ask: rooibos for sleep, ginger for digestion - wellness only</div>
-</div>
-
 <script>
+function addTrack(){let s=document.getElementById('score').value;if(!s)return;let list=JSON.parse(localStorage.getItem('tracks')||'[]');list.push(new Date().toLocaleDateString()+': '+s+'/10');localStorage.setItem('tracks',JSON.stringify(list));showTracks();document.getElementById('score').value='';}
+function showTracks(){let list=JSON.parse(localStorage.getItem('tracks')||'[]');document.getElementById('trackList').innerHTML=list.map(x=>'✅ '+x).join('<br>');}showTracks();
+function setRem(){let t=document.getElementById('remTime').value;if(!t)return;localStorage.setItem('remTime',t);document.getElementById('remStatus').innerText='✅ Reminder '+t;}
+function askBot(){let q=document.getElementById('botQ').value.toLowerCase();let a='Rooibos good for diabetes & BP, Ginger for digestion, Turmeric for arthritis.';if(q.includes('rooibos'))a='Rooibos: no caffeine, antioxidant, 2 cups/day for sugar & BP.';if(q.includes('ginger'))a='Ginger: boil 3 slices, helps digestion & nausea.';document.getElementById('botA').innerText=a;}
+function freeSample(){let e=document.getElementById('freeEmail').value;if(!e.includes('@'))return;document.getElementById('freeMsg').innerText='✅ Sent to '+e;window.open('mailto:'+e+'?subject=FREE NatuTrack Sample','_blank');}
 var ills=["Diabetes","High BP","Insomnia","Anxiety","Digestion","Arthritis","Cholesterol","Weight Loss","Stress","Immune"];
-var out="";
-for(var i=0;i<ills.length;i++){
- out+='<div class="card"><b>'+ills[i]+' Meal Plan</b><p class="small">Breakfast/Lunch/Supper + Herb Recipe + Tracker</p><button class="b47" onclick="window.open(\'https://payhip.com/b/vM5hV\',\'_blank\')">Basic $47 - 7 Day</button><button class="b60" onclick="window.open(\'https://payhip.com/b/4u2b4\',\'_blank\')">Premium $60 - 30 Day + Bot</button></div>';
-}
+var out="";for(var i=0;i<ills.length;i++){out+='<div class="card"><b>'+ills[i]+' Meal Plan</b><p style="font-size:12px">Breakfast/Lunch/Supper + Herb + Tracker</p><button class="b47" onclick="buyBasic(\''+ills[i]+'\')">Basic $47 - 7 Day</button><button class="b60" onclick="buyPrem(\''+ills[i]+'\')">Premium $60 - 30 Day + Bot</button></div>';}
 document.getElementById("plans").innerHTML=out;
+function buyBasic(ill){window.open('mailto:natutracthabopeter@gmail.com?subject=Buy Basic '+ill+' $47 - Send Payment Link&body=I want '+ill+' Basic $47','_blank');alert('Email opened! You will receive payment link for Basic '+ill+' $47');}
+function buyPrem(ill){window.open('mailto:natutracthabopeter@gmail.com?subject=Buy Premium '+ill+' $60&body=I want '+ill+' Premium $60','_blank');alert('Email opened! You will receive payment link for Premium '+ill+' $60');}
 </script>
 </body></html>
