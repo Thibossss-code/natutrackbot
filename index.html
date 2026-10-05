@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NatuTrack</title>
+<title>NatuTrack - Full</title>
 <style>
 body{font-family:Arial;background:#f0f7e6;margin:0;padding:10px}
 .card{background:white;border-radius:16px;padding:15px;margin:10px 0;box-shadow:0 2px 8px #0001}
@@ -9,33 +9,33 @@ button{border:0;border-radius:10px;padding:12px;font-weight:bold;width:100%;marg
 input{padding:12px;border-radius:10px;border:1px solid #ccc;width:90%}
 a{display:block;padding:10px;background:#fff3e0;border-radius:8px;margin:6px 0;text-decoration:none;color:#e65100;font-weight:bold}
 </style></head><body>
-<h1 style="color:#2e7d32">🌿 NatuTrack</h1>
+<h1 style="color:#2e7d32">🌿 NatuTrack FULL</h1>
 
-<div class="card"><b>📊 Tracker</b><br><br>
-<input id="score" type="number" placeholder="1-10"><br>
+<div class="card"><b>📊 Daily Tracker</b><br><br>
+<input id="score" type="number" placeholder="1-10 how you feel"><br>
 <button class="b60" onclick="addTrack()">+ Add Today</button>
 <div id="trackList"></div></div>
 
 <div class="card"><b>⏰ Reminder</b><br>
 <input id="remTime" type="time"><br>
-<button class="b47" onclick="setRem()">Set Reminder</button>
+<button class="b47" onclick="setRem()">Set Daily Reminder</button>
 <p id="remStatus"></p></div>
 
-<div class="card" style="background:#e8f5e9"><b>🤖 Bot FIXED ✅</b><br>
-<input id="botQ" placeholder="Type hello, rooibos, ginger..."><br>
+<div class="card" style="background:#e8f5e9"><b>🤖 NatuTrack Bot - Says Hello ✅</b><br>
+<input id="botQ" placeholder="Type hello, rooibos, diabetes, weight loss..."><br>
 <button class="b60" onclick="askBot()">Ask Bot</button>
 <p id="botA" style="background:white;padding:10px;border-radius:8px;min-height:20px"></p></div>
 
-<div class="card"><b>🔗 Amazon Tools ✅ thibossss-20</b><br>
-<a href="https://www.amazon.com/s?k=rooibos+tea&tag=thibossss-20" target="_blank">🌿 Tool 1: Rooibos Tea</a>
-<a href="https://www.amazon.com/s?k=ginger+tea+digestion&tag=thibossss-20" target="_blank">🌿 Tool 2: Ginger Tea</a>
-<a href="https://www.amazon.com/s?k=turmeric+curcumin&tag=thibossss-20" target="_blank">🌿 Tool 3: Turmeric</a>
-<a href="https://www.amazon.com/s?k=yoga+mat&tag=thibossss-20" target="_blank">🌿 Tool 4: Yoga Mat</a>
+<div class="card"><b>🔗 Amazon Tools ✅ WORKING thibossss-20</b><br>
+<a href="https://www.amazon.com/s?k=rooibos+tea&tag=thibossss-20" target="_blank">🌿 Tool 1: Rooibos Tea - BP & Sugar</a>
+<a href="https://www.amazon.com/s?k=ginger+tea+digestion&tag=thibossss-20" target="_blank">🌿 Tool 2: Ginger Tea - Digestion</a>
+<a href="https://www.amazon.com/s?k=turmeric+curcumin&tag=thibossss-20" target="_blank">🌿 Tool 3: Turmeric - Arthritis</a>
+<a href="https://www.amazon.com/s?k=yoga+mat&tag=thibossss-20" target="_blank">🌿 Tool 4: Yoga Mat - Stress</a>
 <a href="https://www.amazon.com/s?k=blender+bottle&tag=thibossss-20" target="_blank">🌿 Tool 5: Shaker Bottle</a>
-<a href="https://www.amazon.com/s?k=digital+food+scale&tag=thibossss-20" target="_blank">🌿 Tool 6: Food Scale</a>
+<a href="https://www.amazon.com/s?k=digital+food+scale&tag=thibossss-20" target="_blank">🌿 Tool 6: Food Scale - Weight Loss</a>
 </div>
 
-<div class="card" style="background:#dcedc8"><b>FREE Sample!</b><br><br>
+<div class="card" style="background:#dcedc8"><b>🎁 FREE Sample!</b><br><br>
 <input id="freeEmail" placeholder="your email"><br>
 <button class="b60" onclick="freeSample()">Send Free Sample</button>
 <p id="freeMsg"></p></div>
@@ -45,26 +45,25 @@ a{display:block;padding:10px;background:#fff3e0;border-radius:8px;margin:6px 0;t
 <script>
 function addTrack(){let s=document.getElementById('score').value;if(!s)return;let l=JSON.parse(localStorage.getItem('tracks')||'[]');l.push(new Date().toLocaleDateString()+': '+s+'/10');localStorage.setItem('tracks',JSON.stringify(l));showTracks();document.getElementById('score').value='';}
 function showTracks(){let l=JSON.parse(localStorage.getItem('tracks')||'[]');document.getElementById('trackList').innerHTML=l.map(x=>'✅ '+x).join('<br>');}showTracks();
-function setRem(){let t=document.getElementById('remTime').value;if(!t)return;localStorage.setItem('remTime',t);document.getElementById('remStatus').innerText='✅ Reminder '+t;alert('Reminder '+t);}
+function setRem(){let t=document.getElementById('remTime').value;if(!t)return;localStorage.setItem('remTime',t);document.getElementById('remStatus').innerText='✅ Reminder '+t+' set!';alert('Reminder '+t);}
 function askBot(){
  let q=document.getElementById('botQ').value.toLowerCase().trim();
  let a='';
  if(!q)a='Type hello, rooibos, diabetes...';
- else if(q.includes('hello')||q.includes('hi')||q.includes('hey'))a='Hello! 👋 I am NatuTrack Bot! Try: rooibos, ginger, turmeric, diabetes, high bp, insomnia... How can I help?';
- else if(q.includes('rooibos'))a='🌿 Rooibos: No caffeine, antioxidant, great for Diabetes & BP. 2 cups/day.';
- else if(q.includes('ginger'))a='🫚 Ginger: For Digestion & nausea. 3 slices in hot water.';
+ else if(q.includes('hello')||q.includes('hi')||q.includes('hey'))a='Hello! 👋 I am NatuTrack Bot! I help with herbs & meal plans. Try: rooibos, ginger, turmeric, diabetes, high bp, insomnia, weight loss, digestion... How can I help you today?';
+ else if(q.includes('rooibos'))a='🌿 Rooibos: No caffeine, antioxidant. 2 cups/day for Diabetes & High BP. Steep 5 min.';
+ else if(q.includes('ginger'))a='🫚 Ginger: Best for Digestion. 3 slices fresh, hot water 10 min.';
  else if(q.includes('turmeric'))a='✨ Turmeric: For Arthritis, mix with black pepper.';
- else if(q.includes('diabetes'))a='🩸 Diabetes: Low GI, rooibos + cinnamon, oats. See plan below $47.';
- else if(q.includes('bp')||q.includes('pressure'))a='❤️ High BP: Less salt, hibiscus tea, garlic, walk 30min.';
- else if(q.includes('sleep')||q.includes('insomnia'))a='😴 Insomnia: Chamomile tea, no screen 1hr before bed.';
- else a='Thanks for "'+q+'"! Herbs: rooibos (BP), ginger (digestion), turmeric (joints). What is your condition?';
+ else if(q.includes('diabetes'))a='🩸 Diabetes: Low GI, rooibos + cinnamon, oats. See plan $47 below.';
+ else if(q.includes('weight'))a='⚖️ Weight Loss: Food scale + protein + veg, green tea.';
+ else a='Thanks! Try: rooibos, ginger, diabetes, high bp, weight loss?';
  document.getElementById('botA').innerText=a;
 }
-function freeSample(){let e=document.getElementById('freeEmail').value;if(!e.includes('@'))return;document.getElementById('freeMsg').innerText='✅ Sent to '+e;window.open('mailto:'+e+'?subject=FREE Sample&body=Day 1: Rooibos + Oats. Full: https://payhip.com/b/M0tfg','_blank');}
+function freeSample(){let e=document.getElementById('freeEmail').value;if(!e.includes('@')){alert('Enter email');return;}document.getElementById('freeMsg').innerText='✅ Sent to '+e;window.open('mailto:'+e+'?subject=FREE NatuTrack Sample&body=Day 1 Sample: Rooibos + Oats. Full plan: https://payhip.com/b/M0tfg','_blank');}
 var ills=["Diabetes","High BP","Insomnia","Anxiety","Digestion","Arthritis","Cholesterol","Weight Loss","Stress","Immune"];
-var out="";for(var i=0;i<ills.length;i++){out+='<div class="card"><b>'+ills[i]+' Meal Plan</b><p>Breakfast/Lunch/Supper + Herb + Tracker</p><button class="b47" onclick="buyBasic(\''+ills[i]+'\')">Basic $47 - 7 Day</button><button class="b60" onclick="buyPrem(\''+ills[i]+'\')">Premium $60 - 30 Day + Bot</button></div>';}
+var out="";for(var i=0;i<ills.length;i++){
+ out+='<div class="card"><b>'+(i+1)+'. '+ills[i]+' Meal Plan</b><p style="font-size:12px">7-Day Breakfast/Lunch/Supper + Herb + Tracker + Premium 30-Day + Bot</p><button class="b47" onclick="window.open(\'https://payhip.com/b/M0tfg\',\'_blank\')">Basic $47 - 7 Day</button><button class="b60" onclick="window.open(\'https://payhip.com/b/M0tfg\',\'_blank\')">Premium $60 - 30 Day + Bot</button></div>';
+}
 document.getElementById("plans").innerHTML=out;
-function buyBasic(ill){window.open('https://payhip.com/b/M0tfg','_blank');}
-function buyPrem(ill){window.open('https://payhip.com/b/M0tfg','_blank');}
 </script>
 </body></html>
