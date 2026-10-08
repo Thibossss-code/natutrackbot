@@ -1,0 +1,12 @@
+{
+  "name": "NatuTrack - Nature's Diamonds",
+  "short_name": "NatuTrack",
+  "icons": [
+    {"src": "IMG-20261008-WA8764.jpg","sizes":"192x192","type":"image/jpeg"},
+    {"src": "IMG-20261008-WA8764.jpg","sizes":"512x512","type":"image/jpeg"}
+  ],
+  "start_url": "/natutrackbot/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#2e7d32"
+}
