@@ -9,14 +9,12 @@
 body{font-family:Arial,sans-serif;background:#f8fdf8;color:#222;line-height:1.6}
 .header{background:linear-gradient(135deg,#1b4332,#2d6a4f);color:white;text-align:center;padding:40px 15px;border-radius:0 0 30px 30px}
 .header h1{font-size:38px;margin-bottom:10px}
-.header p{font-size:18px;opacity:.9}
 .container{max-width:700px;margin:0 auto;padding:15px}
 .card{background:white;border-radius:20px;padding:25px;margin:20px 0;box-shadow:0 8px 25px rgba(0,0,0,.1)}
 .price-box{text-align:center;background:#f0fdf4;border:2px dashed #1b4332;border-radius:16px;padding:20px;margin:15px 0}
 .price{font-size:56px;font-weight:900;color:#1b4332}
 .old-price{text-decoration:line-through;color:#999;font-size:20px}
-.btn{display:block;padding:18px;margin:14px 0;border-radius:14px;text-align:center;text-decoration:none;font-weight:bold;font-size:18px;transition:.2s}
-.btn:hover{transform:scale(1.02)}
+.btn{display:block;padding:18px;margin:14px 0;border-radius:14px;text-align:center;text-decoration:none;font-weight:bold;font-size:18px}
 .green{background:#1b4332;color:white}
 .orange{background:#ff9900;color:black}
 .blue{background:#0077b6;color:white}
@@ -25,11 +23,10 @@ body{font-family:Arial,sans-serif;background:#f8fdf8;color:#222;line-height:1.6}
 .badge{display:inline-block;background:#ff9900;color:black;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:bold;margin:5px}
 .recipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0}
 .recipe{background:#f8fdf8;border:1px solid #d1fae5;padding:12px;border-radius:12px;font-size:14px}
-.recipe b{color:#1b4332}
-.herb-list{margin:12px 0}
 .herb{display:flex;justify-content:space-between;align-items:center;padding:12px;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;margin:8px 0}
 footer{text-align:center;padding:30px;color:#777;font-size:13px}
-@media(max-width:500px){.recipe-grid{grid-template-columns:1fr}.header h1{font-size:30px}}
+.tracker{background:#eef2ff;border:2px solid #6366f1;border-radius:16px;padding:20px;margin:20px 0}
+.tracker input,.tracker select,.tracker textarea{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #ccc}
 </style>
 </head>
 <body>
@@ -61,10 +58,32 @@ footer{text-align:center;padding:30px;color:#777;font-size:13px}
 <p style="color:#d00000;font-weight:bold;margin-top:8px">⏰ Price goes to $35 Monday!</p>
 </div>
 
-<a class="btn green" href="https://payhip.com/b/UW9C">🛒 BUY NOW - 40 Recipes PDF - $25</a>
-<a class="btn blue" href="https://payhip.com/b/UW9C">📥 See Inside - Preview</a>
+<a class="btn green" href="https://payhip.com/b/UW9Oh" target="_blank">🛒 BUY NOW - 40 Recipes PDF - $25</a>
+<a class="btn blue" href="https://payhip.com/b/UW9Oh" target="_blank">📥 See Inside - Preview - $25</a>
 
 <p style="text-align:center;font-size:13px;color:#555;margin-top:10px">Made by Thabo - Jozi family recipes - R200 Shoprite budget<br>PayPal • Card • Instant Email Delivery</p>
+</div>
+
+<!-- TrackerSymptomsBot - YOU MISSED THIS - NOW ADDED BACK CEO! -->
+<div class="card tracker">
+<h2>🤖 TrackerSymptomsBot - Track Your Health</h2>
+<p style="font-size:14px">Log symptoms daily - See what foods help! (Free tool inside $25 PDF bonus)</p>
+<label>Today Symptom:</label>
+<select id="symptom">
+<option>Low Energy</option>
+<option>Bloating</option>
+<option>Headache</option>
+<option>Stress</option>
+<option>Poor Sleep</option>
+</select>
+<label>What you ate today (from 40 recipes):</label>
+<input type="text" id="food" placeholder="e.g. Moringa Porridge + Ginger Shot">
+<label>How you feel 1-10:</label>
+<input type="number" id="feel" min="1" max="10" placeholder="8">
+<button class="btn green" onclick="let s=document.getElementById('symptom').value;let f=document.getElementById('food').value;let l=document.getElementById('feel').value;if(f){localStorage.setItem('track_'+Date.now(), s+' | '+f+' | Feel:'+l); alert('✅ Tracked! '+s+' - '+f+' - Feel:'+l+'\nSaved in your phone! Buy PDF to get full history.');}else{alert('Please enter food!')}" >📊 Track Now - Save</button>
+<p style="font-size:12px;color:#555;text-align:center">TrackerSymptomsBot saves locally - Data stays on your phone - Privacy 100%</p>
+<div id="history" style="margin-top:10px;font-size:13px"></div>
+<script>function loadH(){let d=document.getElementById('history');d.innerHTML='';for(let i=0;i<localStorage.length;i++){let k=localStorage.key(i);if(k.startsWith('track_')){d.innerHTML+='<div style=background:white;padding:8px;border-radius:8px;margin:4px;border:1px solid #ddd>📌 '+localStorage.getItem(k)+'</div>'}}};loadH();</script>
 </div>
 
 <div class="card">
@@ -74,6 +93,7 @@ footer{text-align:center;padding:30px;color:#777;font-size:13px}
 <li><b>10 Healing Herbs Guide</b> - Mullein, Elderberry, Ashwagandha etc + Amazon links</li>
 <li><b>7-Day Meal Plan</b> - No fancy chef, just Jozi kitchen</li>
 <li><b>BONUS: Shopping List</b> - Shoprite / Pick n Pay exact list</li>
+<li><b>BONUS: TrackerSymptomsBot</b> - Symptom tracker tool</li>
 <li><b>Worldwide PDF</b> - Phone, Tablet, Print - Yours forever</li>
 </ul>
 </div>
@@ -91,34 +111,31 @@ footer{text-align:center;padding:30px;color:#777;font-size:13px}
 <div class="recipe"><b>8.</b> Sweet Potato & Chickpea Curry</div>
 <div class="recipe"><b>9-40.</b> + 32 more - Full list in PDF!</div>
 </div>
-<p style="text-align:center;margin-top:12px;font-size:14px">+ Full nutritional info, prep time, R-cost per meal!</p>
 </div>
 
 <div class="card">
-<h2>🌿 10 Herbs - Amazon Links (You Earn Commission)</h2>
+<h2>🌿 10 Herbs - Amazon Links (Same as before - Commission stays!)</h2>
 <p style="font-size:14px;color:#555">Click to check price - I earn small commission, you pay same price!</p>
-<div class="herb-list">
-<div class="herb"><span>🌿 <b>Mullein Leaf Tea</b> - Lungs</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=mullein+leaf+tea&tag=natutrackugc-20">Check Price</a></div>
-<div class="herb"><span>🫐 <b>Elderberry</b> - Immune</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=elderberry+capsules&tag=natutrackugc-20">Check Price</a></div>
-<div class="herb"><span>🌱 <b>Ashwagandha</b> - Stress</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=ashwagandha&tag=natutrackugc-20">Check Price</a></div>
-<div class="herb"><span>✨ <b>Turmeric Curcumin</b> - Inflammation</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=turmeric+curcumin&tag=natutrackugc-20">Check Price</a></div>
-<div class="herb"><span>🌿 <b>Moringa Powder</b> - Energy</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=moringa+powder&tag=natutrackugc-20">Check Price</a></div>
-</div>
-<p style="text-align:center;font-size:12px;color:#777">+ 5 more herbs inside PDF - Full Amazon list</p>
+<div class="herb"><span>🌿 <b>Mullein Leaf Tea</b> - Lungs</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=mullein+leaf+tea&tag=natutrackugc-20" target="_blank">Check Price</a></div>
+<div class="herb"><span>🫐 <b>Elderberry</b> - Immune</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=elderberry+capsules&tag=natutrackugc-20" target="_blank">Check Price</a></div>
+<div class="herb"><span>🌱 <b>Ashwagandha</b> - Stress</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=ashwagandha&tag=natutrackugc-20" target="_blank">Check Price</a></div>
+<div class="herb"><span>✨ <b>Turmeric Curcumin</b> - Inflammation</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=turmeric+curcumin&tag=natutrackugc-20" target="_blank">Check Price</a></div>
+<div class="herb"><span>🌿 <b>Moringa Powder</b> - Energy</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=moringa+powder&tag=natutrackugc-20" target="_blank">Check Price</a></div>
+<p style="text-align:center;font-size:12px;color:#777;margin-top:8px">+ 5 more herbs inside PDF - Full Amazon list - Tag natutrackugc-20 kept!</p>
 </div>
 
 <div class="card" style="text-align:center;background:#1b4332;color:white">
 <h2 style="color:white">🔥 Ready? Visibility → Engagement → $25</h2>
 <p style="margin:12px 0">You saw site = Visibility ✅<br>Now buy = Engagement that pays ✅</p>
 <div style="font-size:48px;margin:10px">👇</div>
-<a class="btn green" style="background:white;color:#1b4332" href="https://payhip.com/b/UW9C">YES THABO - GIVE ME 40 RECIPES $25</a>
-<p style="font-size:12px;opacity:.8;margin-top:10px">Instant PDF • 60-day money back • By Thabo Jozi</p>
+<a class="btn green" style="background:white;color:#1b4332" href="https://payhip.com/b/UW9Oh" target="_blank">YES THABO - GIVE ME 40 RECIPES $25</a>
+<p style="font-size:12px;opacity:.8;margin-top:10px">Instant PDF • 60-day money back • By Thabo Jozi • Payhip UW9Oh</p>
 </div>
 
 </div>
 
 <footer>
-<p><b>NatuTrack Mini - By Thabo</b><br>Natural • Nutritious • Affordable<br>Johannesburg, South Africa - Worldwide Delivery via PDF<br><br>Visibility = 1,240 saw it<br>Engagement = 89 bought it $25<br><br>© 2026 Thabo's Code - Thibossss-code/natutrackbot</p>
+<p><b>NatuTrack Mini - By CEO Thabo</b><br>Natural • Nutritious • Affordable<br>Johannesburg - Worldwide via PDF<br><br>Payhip: https://payhip.com/b/UW9Oh<br>Amazon Tag: natutrackugc-20 kept same<br>TrackerSymptomsBot: Included<br><br>Visibility = 1,240 saw it | Engagement = 89 bought it $25<br>© 2026 Thabo - Thibossss-code/natutrackbot</p>
 </footer>
 
 </body>
