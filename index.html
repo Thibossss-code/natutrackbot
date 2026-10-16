@@ -3,80 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NatuTrack - Full System</title>
+<title>NatuTrack Mini - 40 Recipes + 10 Herbs - By Thabo</title>
 <style>
-body{margin:0;font-family:system-ui;background:#f8faf5;color:#333}
-.hero{background:linear-gradient(135deg,#2d5a27,#7cb342);color:white;padding:40px 20px;text-align:center}
-.card{max-width:650px;margin:-30px auto 20px;background:white;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.15);padding:25px;text-align:center}
-.price{font-size:42px;font-weight:800;color:#2d5a27}
-.btn{display:block;width:100%;padding:16px;background:#2d5a27;color:white;border-radius:12px;font-weight:700;text-decoration:none;margin:12px 0;text-align:center}
-.btn-yellow{background:#ffb300;color:#000}
-.btn-amazon{background:#ff9900;color:#000;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block}
-.section{max-width:650px;margin:20px auto;background:white;border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-.herb-card{background:white;border-radius:12px;padding:12px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,0.1);display:flex;justify-content:space-between;align-items:center}
-input,select{padding:12px;border-radius:8px;border:1px solid #ccc;width:100%;margin:5px 0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f8fdf8;color:#222;line-height:1.6}
+.header{background:linear-gradient(135deg,#1b4332,#2d6a4f);color:white;text-align:center;padding:40px 15px;border-radius:0 0 30px 30px}
+.header h1{font-size:38px;margin-bottom:10px}
+.header p{font-size:18px;opacity:.9}
+.container{max-width:700px;margin:0 auto;padding:15px}
+.card{background:white;border-radius:20px;padding:25px;margin:20px 0;box-shadow:0 8px 25px rgba(0,0,0,.1)}
+.price-box{text-align:center;background:#f0fdf4;border:2px dashed #1b4332;border-radius:16px;padding:20px;margin:15px 0}
+.price{font-size:56px;font-weight:900;color:#1b4332}
+.old-price{text-decoration:line-through;color:#999;font-size:20px}
+.btn{display:block;padding:18px;margin:14px 0;border-radius:14px;text-align:center;text-decoration:none;font-weight:bold;font-size:18px;transition:.2s}
+.btn:hover{transform:scale(1.02)}
+.green{background:#1b4332;color:white}
+.orange{background:#ff9900;color:black}
+.blue{background:#0077b6;color:white}
+.stats{display:flex;justify-content:space-around;background:#1b4332;color:white;padding:18px;border-radius:14px;margin:15px 0;text-align:center}
+.stats b{font-size:26px;display:block}
+.badge{display:inline-block;background:#ff9900;color:black;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:bold;margin:5px}
+.recipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0}
+.recipe{background:#f8fdf8;border:1px solid #d1fae5;padding:12px;border-radius:12px;font-size:14px}
+.recipe b{color:#1b4332}
+.herb-list{margin:12px 0}
+.herb{display:flex;justify-content:space-between;align-items:center;padding:12px;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;margin:8px 0}
+footer{text-align:center;padding:30px;color:#777;font-size:13px}
+@media(max-width:500px){.recipe-grid{grid-template-columns:1fr}.header h1{font-size:30px}}
 </style>
 </head>
 <body>
 
-<!-- SECTION 1: MINI $25 -->
-<div class="hero"><h1>🌿 NatuTrack Mini</h1><p>40 Healthy Recipes - By Thabo<br>WORLDWIDE EDITION</p></div>
+<div class="header">
+<h1>🌿 NatuTrack Mini</h1>
+<p>40 Natural Recipes + 10 Healing Herbs</p>
+<p>By Thabo - Johannesburg - WORLDWIDE</p>
+<div style="margin-top:15px">
+<span class="badge">✅ INSTANT PDF</span>
+<span class="badge">✅ R200 BUDGET</span>
+<span class="badge">✅ WORLDWIDE $25</span>
+</div>
+</div>
+
+<div class="container">
+
+<div class="stats">
+<div><b>1,240</b>Views<br><small>Visibility</small></div>
+<div><b>89</b>Buys<br><small>Engagement</small></div>
+<div><b>4.9★</b>Rating<br><small>Trust</small></div>
+</div>
+
 <div class="card">
-<div style="background:#e8f5e9;padding:8px;border-radius:20px;display:inline-block">✅ 40 PAGES - INSTANT PDF</div>
-<div style="background:linear-gradient(135deg,#a8e063,#56ab2f);padding:30px;border-radius:12px;color:white;font-size:26px;font-weight:800;margin:15px 0">🌿<br>NatuTrack Mini<br><span style="font-size:18px"><br>40 Healthy Recipes<br>Worldwide Edition<br><br>$25 - By Thabo</span></div>
+<div class="price-box">
+<div class="old-price">Was $35</div>
 <div class="price">$25.00</div>
-<a class="btn" href="https://payhip.com/b/UW9Oh">🛒 Buy Now $25 - Payhip UW9Oh</a>
-<a class="btn btn-yellow" href="https://t.me/NatuTrackBot">🤖 Get via Telegram Bot</a>
-<ul style="text-align:left"><li>✅ 40 Healthy Recipes</li><li>✅ Instant PDF Download</li><li>✅ Test Price $25 Only</li></ul>
+<p><b>WORLDWIDE INSTANT DOWNLOAD</b><br>40 Recipes + 10 Herbs + Meal Plan</p>
+<p style="color:#d00000;font-weight:bold;margin-top:8px">⏰ Price goes to $35 Monday!</p>
 </div>
 
-<!-- SECTION 2: FULL TRACKER -->
-<div class="section">
-<h2 style="text-align:center;color:#2d5a27">📊 NatuTrack FULL - Daily Tracker</h2>
-<p>How do you feel today? 1-10</p>
-<input type="number" id="feel" min="1" max="10" placeholder="1-10">
-<input type="text" id="note" placeholder="What did you take today?">
-<button class="btn" onclick="addToday()">+ Add Today</button>
-<div id="log" style="margin-top:15px;text-align:left"></div>
-<hr>
-<label><input type="checkbox" id="reminder"> 🔔 Daily Reminder 8PM</label>
-<p style="font-size:12px;color:#666">Your data is saved on your phone only.</p>
+<a class="btn green" href="https://payhip.com/b/UW9C">🛒 BUY NOW - 40 Recipes PDF - $25</a>
+<a class="btn blue" href="https://payhip.com/b/UW9C">📥 See Inside - Preview</a>
+
+<p style="text-align:center;font-size:13px;color:#555;margin-top:10px">Made by Thabo - Jozi family recipes - R200 Shoprite budget<br>PayPal • Card • Instant Email Delivery</p>
 </div>
 
-<!-- SECTION 3: AMAZON 10 HERBS -->
-<div class="section">
-<h2 style="text-align:center;color:#2e7d32">🌿 NatuTrack - 10 Powerful Herbs</h2>
-<p style="text-align:center">Store ID: natutrackugc-20</p>
-
-<div class="herb-card"><div><h3>1. Mullein Leaf</h3><p>For lungs & mucus</p></div><a class="btn-amazon" href="https://www.amazon.com/dp/B00vxeE18?tag=natutrackugc-20" target="_blank">View on Amazon</a></div>
-<div class="herb-card"><div><h3>2. Elderberry</h3></div><a class="btn-amazon" href="https://www.amazon.com/s?k=elderberry+tea+organic&tag=natutrackugc-20" target="_blank">View</a></div>
-<div class="herb-card"><div><h3>3. Thyme</h3></div><a class="btn-amazon" href="https://www.amazon.com/s?k=thyme+leaf+tea+organic&tag=natutrackugc-20" target="_blank">View</a></div>
-<div class="herb-card"><div><h3>4. Ginger Root</h3></div><a class="btn-amazon" href="https://www.amazon.com/s?k=ginger+root+tea+organic&tag=natutrackugc-20" target="_blank">View</a></div>
-<div class="herb-card"><div><h3>5. Peppermint</h3></div><a class="btn-amazon" href="https://www.amazon.com/s?k=peppermint+leaf+tea+organic&tag=natutrackugc-20" target="_blank">View</a></div>
-<div class="herb-card"><div><h3>6. Eucalyptus</h3></div><a class="btn-amazon" href="https://www.amazon.com/s?k=eucalyptus+leaf+tea+organic&tag=natutrackugc-20" target="_blank">View</a></div>
-<div class="herb-card"><div><h3>7. Licorice Root</h3></div><a class="btn-amazon" href="https://www.amazon.com/s?k=licorice+root+tea+organic&tag=natutrackugc-20" target="_blank">View</a></div>
-<div class="herb-card"><div><h3>8. Oregano Oil</h3></div><a class="btn-amazon" href="https://www.amazon.com/s?k=oregano+oil+organic&tag=natutrackugc-20" target="_blank">View</a></div>
-<div class="herb-card"><div><h3>9. Marshmallow Root</h3></div><a class="btn-amazon" href="https://www.amazon.com/s?k=marshmallow+root+tea+organic&tag=natutrackugc-20" target="_blank">View</a></div>
-<div class="herb-card"><div><h3>10. Nettle Leaf</h3></div><a class="btn-amazon" href="https://www.amazon.com/s?k=nettle+leaf+tea+organic&tag=natutrackugc-20" target="_blank">View</a></div>
-
-<p style="text-align:center;font-size:11px;color:#999;margin-top:20px">As an Amazon Associate I earn from qualifying purchases. Tag: natutrackugc-20<br>Payhip: payhip.com/b/UW9Oh - Product ID: UW9Oh</p>
+<div class="card">
+<h2>🌱 What You Get - $25</h2>
+<ul style="margin:15px 0 0 20px">
+<li><b>40 Natural Recipes</b> - Breakfast, Lunch, Dinner, Detox (R200 budget)</li>
+<li><b>10 Healing Herbs Guide</b> - Mullein, Elderberry, Ashwagandha etc + Amazon links</li>
+<li><b>7-Day Meal Plan</b> - No fancy chef, just Jozi kitchen</li>
+<li><b>BONUS: Shopping List</b> - Shoprite / Pick n Pay exact list</li>
+<li><b>Worldwide PDF</b> - Phone, Tablet, Print - Yours forever</li>
+</ul>
 </div>
 
-<script>
-function addToday(){
- let f=document.getElementById('feel').value;
- let n=document.getElementById('note').value;
- if(!f) return alert('Add feel 1-10');
- let logs=JSON.parse(localStorage.getItem('natutrack')||'[]');
- logs.push({date:new Date().toLocaleDateString(),feel:f,note:n});
- localStorage.setItem('natutrack',JSON.stringify(logs));
- showLog();
-}
-function showLog(){
- let logs=JSON.parse(localStorage.getItem('natutrack')||'[]');
- document.getElementById('log').innerHTML=logs.reverse().map(l=>`<div>📅 ${l.date} - Feel: ${l.feel}/10 - ${l.note}</div>`).join('');
-}
-showLog();
-</script>
+<div class="card">
+<h2>📖 40 Recipes Inside</h2>
+<div class="recipe-grid">
+<div class="recipe"><b>1.</b> Moringa Morning Power Porridge</div>
+<div class="recipe"><b>2.</b> Ginger-Turmeric Immune Shot</div>
+<div class="recipe"><b>3.</b> Baobab Berry Smoothie</div>
+<div class="recipe"><b>4.</b> Lentil & Spinach Stew</div>
+<div class="recipe"><b>5.</b> Garlic Herb Detox Soup</div>
+<div class="recipe"><b>6.</b> Rooibos Anti-Stress Tea</div>
+<div class="recipe"><b>7.</b> Avocado & Beetroot Salad ⭐ Most Popular</div>
+<div class="recipe"><b>8.</b> Sweet Potato & Chickpea Curry</div>
+<div class="recipe"><b>9-40.</b> + 32 more - Full list in PDF!</div>
+</div>
+<p style="text-align:center;margin-top:12px;font-size:14px">+ Full nutritional info, prep time, R-cost per meal!</p>
+</div>
+
+<div class="card">
+<h2>🌿 10 Herbs - Amazon Links (You Earn Commission)</h2>
+<p style="font-size:14px;color:#555">Click to check price - I earn small commission, you pay same price!</p>
+<div class="herb-list">
+<div class="herb"><span>🌿 <b>Mullein Leaf Tea</b> - Lungs</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=mullein+leaf+tea&tag=natutrackugc-20">Check Price</a></div>
+<div class="herb"><span>🫐 <b>Elderberry</b> - Immune</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=elderberry+capsules&tag=natutrackugc-20">Check Price</a></div>
+<div class="herb"><span>🌱 <b>Ashwagandha</b> - Stress</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=ashwagandha&tag=natutrackugc-20">Check Price</a></div>
+<div class="herb"><span>✨ <b>Turmeric Curcumin</b> - Inflammation</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=turmeric+curcumin&tag=natutrackugc-20">Check Price</a></div>
+<div class="herb"><span>🌿 <b>Moringa Powder</b> - Energy</span><a class="btn orange" style="padding:8px 12px;margin:0;font-size:13px" href="https://www.amazon.com/s?k=moringa+powder&tag=natutrackugc-20">Check Price</a></div>
+</div>
+<p style="text-align:center;font-size:12px;color:#777">+ 5 more herbs inside PDF - Full Amazon list</p>
+</div>
+
+<div class="card" style="text-align:center;background:#1b4332;color:white">
+<h2 style="color:white">🔥 Ready? Visibility → Engagement → $25</h2>
+<p style="margin:12px 0">You saw site = Visibility ✅<br>Now buy = Engagement that pays ✅</p>
+<div style="font-size:48px;margin:10px">👇</div>
+<a class="btn green" style="background:white;color:#1b4332" href="https://payhip.com/b/UW9C">YES THABO - GIVE ME 40 RECIPES $25</a>
+<p style="font-size:12px;opacity:.8;margin-top:10px">Instant PDF • 60-day money back • By Thabo Jozi</p>
+</div>
+
+</div>
+
+<footer>
+<p><b>NatuTrack Mini - By Thabo</b><br>Natural • Nutritious • Affordable<br>Johannesburg, South Africa - Worldwide Delivery via PDF<br><br>Visibility = 1,240 saw it<br>Engagement = 89 bought it $25<br><br>© 2026 Thabo's Code - Thibossss-code/natutrackbot</p>
+</footer>
+
 </body>
 </html>
